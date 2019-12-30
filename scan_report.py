@@ -15,12 +15,16 @@ HTML_TEMPLATE1 = '''
   table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    text-align: center;
   }
   th, td {
     padding: 5px;
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 90%;
+  }
+  th{
+    background-color: #595b5d
   }
   table tbody tr:hover {
     background-color: #dddddd;
@@ -41,7 +45,7 @@ HTML_TEMPLATE2 = '''
 now = datetime.datetime.now()
 
 
-def to_html_pretty(df, filename, path, target, result):
+def to_html_scan(df, filename, path, target, result):
     """
     Write an entire dataframe to an HTML file
     with nice formatting.

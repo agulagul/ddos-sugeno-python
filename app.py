@@ -1,6 +1,6 @@
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QWidget,  QPushButton, QFileDialog, QLabel, QLineEdit, \
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLabel, QLineEdit, \
     QComboBox, QMenuBar, QMenu, QAction
 import sys
 from classifier import *
@@ -141,6 +141,7 @@ class Window(QWidget):
         self.actionExit.triggered.connect(self.closeApp)
         self.btnScan.clicked.connect(self.scan)
         self.btnReport.clicked.connect(self.view_scan_report)
+        self.btnCalculation.clicked.connect(self.view_calc_report)
 
     def openFile(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file', "", "CSV Files (*.csv)")
@@ -160,7 +161,6 @@ class Window(QWidget):
         self.selectionchange(0)
         self.comboBox.currentIndexChanged.connect(self.selectionchange)
 
-
     def selectionchange(self, i):
         self.server_ip = self.comboBox.currentText()
 
@@ -168,7 +168,8 @@ class Window(QWidget):
         self.df = filter_server(self.df, self.server_ip)
         check = QPixmap('res/check.png')
         cross = QPixmap('res/cross.png')
-        report_dict, alfa, z, Z, Z_class, klasifikasi = calculate(self.df)
+        report_dict, keanggotaan_length, keanggotaan_source, keanggotaan_packet, rule_dict, Z, Z_class, klasifikasi = calculate(
+            self.df)
         if klasifikasi == 'POD':
             self.image.setPixmap(cross)
             self.result.setText("DDOS PING OF DEATH DETECTED!!!")
@@ -176,17 +177,25 @@ class Window(QWidget):
             self.image.setPixmap(check)
             self.result.setText("DDOS PING OF DEATH NOT DETECTED!!!")
         generate_report(report_dict, self.filePath, self.server_ip, klasifikasi)
+        generate_calculation(report_dict, keanggotaan_length, keanggotaan_source, keanggotaan_packet, rule_dict,
+                             self.filePath,
+                             self.server_ip, klasifikasi)
 
     def view_scan_report(self):
         path = self.filePath.split('/')[-1]
-        output = path.split('.')[0] + '-report.html'
+        output = path.split('.')[0] + '-scan.html'
         output_path = self.filePath.strip(path) + output
         webbrowser.open(output_path, new=2)
 
     def view_calc_report(self):
+        path = self.filePath.split('/')[-1]
+        output = path.split('.')[0] + '-calculation.html'
+        output_path = self.filePath.strip(path) + output
+        webbrowser.open(output_path, new=2)
 
     def closeApp(self):
         sys.exit()
+
 
 App = QApplication(sys.argv)
 window = Window()
