@@ -39,9 +39,6 @@ HTML_TEMPLATE2 = '''
 '''
 
 now = datetime.datetime.now()
-path = 'ddos.csv'
-target = '192.168.100.10'
-result = 'SAFE'
 
 
 def to_html_pretty(df, filename, path, target, result):
@@ -52,7 +49,7 @@ def to_html_pretty(df, filename, path, target, result):
     pretty printer see https://stackoverflow.com/a/47723330/362951
     """
     ht = ''
-    ht += '<h1> DDOS Ping of Death Calculation Report </h1>\n'
+    ht += '<h1> DDOS Ping of Death Scan Report </h1>\n'
     ht += '<h1> %s </h1>\n' % now.strftime("%Y-%m-%d %H:%M")
     ht += '<p>Source file : %s </p>' % path
     ht += '<p>Server IP : %s </p>' % target
