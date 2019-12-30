@@ -9,18 +9,22 @@ def derajat_length(packet_length):
         length.panjang = 0
     elif (packet_length > 60 and packet_length < 90):
         length.pendek = (90 - packet_length) / (90 - 60)
+        length.pendek = round(length.pendek, 2)
         if length.pendek < 0:
             length.pendek = 0
         length.normal = (packet_length - 60 ) / (90 - 60)
+        length.normal = round(length.normal, 2)
         if length.normal < 0:
             length.normal = 0
         length.panjang = 0
     elif (packet_length >= 90 and packet_length < 120):
         length.pendek = 0
         length.normal = (120 - packet_length) / (120 - 90)
+        length.normal = round(length.normal, 2)
         if length.normal < 0:
             length.normal = 0
         length.panjang = (packet_length - 90) / (120 - 90)
+        length.panjang = round(length.panjang, 2)
         if length.panjang < 0:
             length.panjang = 0
     else:
@@ -37,9 +41,11 @@ def derajat_source(source_count):
         source.multi = 0
     elif(source_count > 1 and source_count < 3):
         source.single = (3 - source_count) / (3 - 1)
+        source.single = round(source.single, 2)
         if source.single < 0:
             source.single = 0
         source.multi = (source_count - 1) / (3 - 1)
+        source.multi = round(source.multi, 2)
         if source.multi < 0:
             source.multi = 0
     else:
@@ -55,9 +61,11 @@ def derajat_jmldata(data_count):
         jmldata.banyak = 0
     elif(data_count > 10 and data_count < 50):
         jmldata.sedikit = (50 - data_count) / (50 - 10)
+        jmldata.sedikit = round(jmldata.sedikit, 2)
         if jmldata.sedikit < 0:
             jmldata.sedikit = 0
         jmldata.banyak = (data_count - 10) / (50 -10)
+        jmldata.banyak = round(jmldata.banyak, 2)
         if jmldata.banyak < 0:
             jmldata.banyak = 0
     else:
@@ -73,7 +81,9 @@ def derajat_POD(z):
         kategori.POD = 0
     elif(z > 0.4 and z < 0.6):
         kategori.NOT_POD = (50 - z) / (50 - 10)
+        kategori.NOT_POD = round(kategori.NOT_POD, 2)
         kategori.POD = (z - 10) / (50 -10)
+        kategori.POD = round(kategori.POD, 2)
     else:
         kategori.NOT_POD = 0
         kategori.POD = 1
@@ -82,11 +92,13 @@ def derajat_POD(z):
 
 def z_NOTPOD(alfapredikat):
     z = 0.6 - (alfapredikat * (0.2))
+    z = round(z, 2)
     return z
 
 
 def z_POD(alfapredikat):
     z = (alfapredikat * (0.2)) + 0.4
+    z = round(z, 2)
     return z
 
 

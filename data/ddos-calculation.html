@@ -1,0 +1,914 @@
+
+<html>
+<head>
+<style>
+  h1 {
+    text-align: center;
+  }
+  table { 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th, td {
+    padding: 5px;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 90%;
+  }
+  th{
+    background-color: #595b5d
+  }
+  table tbody tr:hover {
+    background-color: #dddddd;
+  }
+  .wide {
+    width: 90%; 
+  }
+</style>
+</head>
+<body>
+<h1><b>DDOS Ping of Death Calculation Report</b></h1>
+<h1><b> 2019-12-30 14:44 </b></h1>
+<h2><b><br>Source file : /home/data/Projek/ddos-sugeno-python/data/ddos.csv </b></h2><h2><b>Server IP : 192.168.100.14 </b></h2><h2><b>Scan Result : <span style="color: #ff0000;"> POD </span></b></h2><h2><b>Calculation Result : </b></h2><p><b><br>&emsp;1. Interval ke-0</b></p><p>&emsp;&emsp;&emsp;Derajat keanggotaan panjang paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>average_length</th>
+      <th>length_pendek</th>
+      <th>length_normal</th>
+      <th>length_panjang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>67038.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah attacker : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>source_count</th>
+      <th>source_single</th>
+      <th>source_multi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>packet_count</th>
+      <th>packet_sedikit</th>
+      <th>packet_banyak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>135</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Inferensi : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>rule</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>alfapredikat</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = single AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = single AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = single AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = single AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = multi AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>IF jmldata = banyak AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Defuzzyfikasi : </p><p><br>&emsp;&emsp;&emsp;Z0 = (0*0.6 + 0*0.4 + 0*0.4 + 0*0.6 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 1*0.6) : <span style="color: #ff0000;">(0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1)</p><p>&emsp;&emsp;&emsp;Z0 = (0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.6) : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z0 = 0.6 : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z0 = 0.6</p><p>&emsp;&emsp;&emsp;Hasil deteksi : POD</p><p><b><br>&emsp;2. Interval ke-1</b></p><p>&emsp;&emsp;&emsp;Derajat keanggotaan panjang paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>average_length</th>
+      <th>length_pendek</th>
+      <th>length_normal</th>
+      <th>length_panjang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>67038.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah attacker : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>source_count</th>
+      <th>source_single</th>
+      <th>source_multi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>packet_count</th>
+      <th>packet_sedikit</th>
+      <th>packet_banyak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>135</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Inferensi : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>rule</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>alfapredikat</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = single AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = single AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = single AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = single AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = multi AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>IF jmldata = banyak AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Defuzzyfikasi : </p><p><br>&emsp;&emsp;&emsp;Z1 = (0*0.6 + 0*0.4 + 0*0.4 + 0*0.6 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 1*0.6) : <span style="color: #ff0000;">(0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1)</p><p>&emsp;&emsp;&emsp;Z1 = (0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.6) : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z1 = 0.6 : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z1 = 0.6</p><p>&emsp;&emsp;&emsp;Hasil deteksi : POD</p><p><b><br>&emsp;3. Interval ke-2</b></p><p>&emsp;&emsp;&emsp;Derajat keanggotaan panjang paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>average_length</th>
+      <th>length_pendek</th>
+      <th>length_normal</th>
+      <th>length_panjang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>67038.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah attacker : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>source_count</th>
+      <th>source_single</th>
+      <th>source_multi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>packet_count</th>
+      <th>packet_sedikit</th>
+      <th>packet_banyak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>135</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Inferensi : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>rule</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>alfapredikat</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = single AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = single AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = single AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = single AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = multi AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>IF jmldata = banyak AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Defuzzyfikasi : </p><p><br>&emsp;&emsp;&emsp;Z2 = (0*0.6 + 0*0.4 + 0*0.4 + 0*0.6 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 1*0.6) : <span style="color: #ff0000;">(0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1)</p><p>&emsp;&emsp;&emsp;Z2 = (0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.6) : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z2 = 0.6 : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z2 = 0.6</p><p>&emsp;&emsp;&emsp;Hasil deteksi : POD</p><p><b><br>&emsp;4. Interval ke-3</b></p><p>&emsp;&emsp;&emsp;Derajat keanggotaan panjang paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>average_length</th>
+      <th>length_pendek</th>
+      <th>length_normal</th>
+      <th>length_panjang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>67038.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah attacker : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>source_count</th>
+      <th>source_single</th>
+      <th>source_multi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>packet_count</th>
+      <th>packet_sedikit</th>
+      <th>packet_banyak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>135</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Inferensi : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>rule</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>alfapredikat</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = single AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = single AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = single AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = single AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = multi AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>IF jmldata = banyak AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Defuzzyfikasi : </p><p><br>&emsp;&emsp;&emsp;Z3 = (0*0.6 + 0*0.4 + 0*0.4 + 0*0.6 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 1*0.6) : <span style="color: #ff0000;">(0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1)</p><p>&emsp;&emsp;&emsp;Z3 = (0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.6) : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z3 = 0.6 : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z3 = 0.6</p><p>&emsp;&emsp;&emsp;Hasil deteksi : POD</p><p><b><br>&emsp;5. Interval ke-4</b></p><p>&emsp;&emsp;&emsp;Derajat keanggotaan panjang paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>average_length</th>
+      <th>length_pendek</th>
+      <th>length_normal</th>
+      <th>length_panjang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>45196.67</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah attacker : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>source_count</th>
+      <th>source_single</th>
+      <th>source_multi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Derajat keanggotaan jumlah paket : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>packet_count</th>
+      <th>packet_sedikit</th>
+      <th>packet_banyak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>91</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Inferensi : <p><table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: center;">
+      <th>interval</th>
+      <th>rule</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>alfapredikat</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = single AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = single AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = pendek THEN kategori = NOT_POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = sedikit AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = single AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = single AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = single AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = multi AND length = pendek THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = multi AND length = normal THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>IF jmldata = banyak AND source = multi AND length = panjang THEN kategori = POD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table><p>&emsp;&emsp;&emsp;Defuzzyfikasi : </p><p><br>&emsp;&emsp;&emsp;Z4 = (0*0.6 + 0*0.4 + 0*0.4 + 0*0.6 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 0*0.4 + 1*0.6) : <span style="color: #ff0000;">(0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1)</p><p>&emsp;&emsp;&emsp;Z4 = (0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.0 + 0.6) : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z4 = 0.6 : <span style="color: #ff0000;">1</p><p>&emsp;&emsp;&emsp;Z4 = 0.6</p><p>&emsp;&emsp;&emsp;Hasil deteksi : POD</p><h2><center><br><b>Final Result : </b></center></h2><h2><center><span style="color: #00ff00;">NOT_POD : 0</center></h2><h2><center><span style="color: #ff0000;">POD : 5</center></h2>
+</body>
+</html>

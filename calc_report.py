@@ -104,8 +104,5 @@ def to_html_calc(report, length, source, packet, rule, filename, path, target, r
     ht += '<h2><center><span style="color: #ff0000;">POD : %s</center></h2>' % report[report['class'] == 'POD'].count()[
         0]
 
-    splited_path = path.split('/')[-1]
-    output = splited_path.split('.')[0] + '-calculation.html'
-    filename = path.strip(splited_path) + output
     with open(filename, 'w') as f:
         f.write(HTML_TEMPLATE1 + ht + HTML_TEMPLATE2)

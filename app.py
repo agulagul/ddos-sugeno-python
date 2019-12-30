@@ -84,7 +84,7 @@ class Window(QWidget):
         self.btnScan.setObjectName("btnScan")
 
         self.result = QLabel(self)
-        self.result.setGeometry(QtCore.QRect(330, 140, 331, 51))
+        self.result.setGeometry(QtCore.QRect(330, 140, 400, 51))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.result.setFont(font)
@@ -172,10 +172,10 @@ class Window(QWidget):
             self.df)
         if klasifikasi == 'POD':
             self.image.setPixmap(cross)
-            self.result.setText("DDOS PING OF DEATH DETECTED!!!")
+            self.result.setText("<font color='red'>DDOS PING OF DEATH DETECTED!!!</font>")
         else:
             self.image.setPixmap(check)
-            self.result.setText("DDOS PING OF DEATH NOT DETECTED!!!")
+            self.result.setText("<font color='green'>DDOS PING OF DEATH NOT DETECTED!!!</font>")
         generate_report(report_dict, self.filePath, self.server_ip, klasifikasi)
         generate_calculation(report_dict, keanggotaan_length, keanggotaan_source, keanggotaan_packet, rule_dict,
                              self.filePath,
