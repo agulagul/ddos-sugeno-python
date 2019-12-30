@@ -21,3 +21,7 @@ How to use :
     * Open your terminal/command prompt.
     * Move to cloned repository with `cd`
     * Type `python app.py`
+    
+## TO DO :
+* Add save report to pdf
+* Add help code in apps
